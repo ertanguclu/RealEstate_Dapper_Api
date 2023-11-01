@@ -6,6 +6,7 @@ namespace RealEstate_Dapper_UI.ViewComponents.HomePage
     {
         public IViewComponentResult Invoke()
         {
+
             return View();
         }
     }
