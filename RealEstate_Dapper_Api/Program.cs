@@ -1,4 +1,5 @@
 using RealEstate_Dapper_Api.Models.DapperContext;
+using RealEstate_Dapper_Api.Repositories.BottomGridRepositories;
 using RealEstate_Dapper_Api.Repositories.CategoryRepository;
 using RealEstate_Dapper_Api.Repositories.ProductRepository;
 using RealEstate_Dapper_Api.Repositories.ServiceRepository;
@@ -13,6 +14,7 @@ builder.Services.AddTransient < ICategoryRepository,CategoryRepository>();
 builder.Services.AddTransient<IProductRepository,ProductRepository>();
 builder.Services.AddTransient<IWhoWeAreDetailRepository,WhoWeAreDetailRepository>();
 builder.Services.AddTransient<IServiceRepository,ServiceRepository>();
+builder.Services.AddTransient<IBottomGridRepository,BottomGridRepository>();
 
 
 builder.Services.AddControllers();
