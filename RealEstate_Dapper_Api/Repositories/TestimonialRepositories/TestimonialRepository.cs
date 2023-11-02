@@ -16,7 +16,7 @@ namespace RealEstate_Dapper_Api.Repositories.TestimonialRepositories
         public async Task<List<ResultTestimonialDto>> GetAllTestimonialAsync()
         {
             string query = "Select * From Testimonial";
-            using (var connection = _context.CreateConnection())
+            using(var connection = _context.CreateConnection())
             {
                 var values = await connection.QueryAsync<ResultTestimonialDto>(query);
                 return values.ToList();

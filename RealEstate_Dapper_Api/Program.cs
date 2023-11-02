@@ -21,6 +21,7 @@ builder.Services.AddTransient<IPopularLocationRepository,PopularLocationReposito
 builder.Services.AddTransient<ITestimonialRepository,TestimonialRepository>();
 
 
+
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
