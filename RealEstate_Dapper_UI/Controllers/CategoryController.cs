@@ -31,10 +31,10 @@ namespace RealEstate_Dapper_UI.Controllers
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> CreateCategory(CreateCategoryDto createCAtegoryDto)
+        public async Task<IActionResult> CreateCategory(CreateCategoryDto createCategoryDto)
         {
             var client = _httpClientFactory.CreateClient();
-            var jsonData= JsonConvert.SerializeObject(createCAtegoryDto);
+            var jsonData= JsonConvert.SerializeObject(createCategoryDto);
             StringContent stringContent = new StringContent(jsonData,Encoding.UTF8,"application/json");
             var resonseMessage = await client.PostAsync("https://localhost:44352/api/Categories", stringContent);
             if(resonseMessage.IsSuccessStatusCode)
