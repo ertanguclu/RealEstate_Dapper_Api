@@ -13,14 +13,22 @@
                 <div class="col-md-12">
                     <div class="card">
                         <script type="text/javascript">
-                         $(document).ready(()=>{
-                             var connection = new signalR.HubConnectionBuilder().withUrl("https://localhost:44352/SignalRHub").build();
-                             $("#connstatus").text(connection.state);
+                            $(document).ready(() => {
+                                var connection = new signalR.HubConnectionBuilder().withUrl("https://localhost:44352/SignalRHub").build();
+                                $("#connstatus").text(connection.state);
 
-                             connection.start().then(() => {
-                                 $("#connstatus").text(connection.state);
-                             }).catch((err) => { console.log(err) });
-                         })   
+                                connection.start().then(() => {
+                                    $("#connstatus").text(connection.state);
+                                    connection.invoke("SendCategoryCount");
+                                }).catch((err) => { console.log(err) });
+
+                               
+                                connection.on("ReceiveCategoryCount", (value) => {
+                                    $("#categorycount").text(value);
+                                });
+                            });
+
+                           
                         </script>
                     </div>
                 </div>
@@ -32,5 +40,9 @@
 <div class="row">
     <div class="col-8 offset-2">
         <div class="alert alert-warning">Bağlantı Durumu:<strong id="connstatus"></strong></div>
+    </div>
+
+    <div class="col-8 offset-2">
+        <div class="alert alert-primary">Katagori Sayısı:<strong id="categorycount"></strong></div>
     </div>
 </div>
