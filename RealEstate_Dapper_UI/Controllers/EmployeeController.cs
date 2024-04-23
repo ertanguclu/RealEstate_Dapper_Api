@@ -22,7 +22,7 @@ namespace RealEstate_Dapper_UI.Controllers
         public async Task<IActionResult> Index()
         {
             var user = User.Claims;
-            //var userId = _loginService.GetUserId;
+            var userId = _loginService.GetUserId;
 
             var token=User.Claims.FirstOrDefault(x => x.Type == "realestatetoken")?.Value;
             if (token != null)
