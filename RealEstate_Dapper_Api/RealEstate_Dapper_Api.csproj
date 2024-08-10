@@ -10,7 +10,12 @@
   <ItemGroup>
     <PackageReference Include="Dapper" Version="2.1.15" />
     <PackageReference Include="Microsoft.Data.SqlClient" Version="5.1.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RealEstate_Dapper_UI\RealEstate_Dapper_UI.csproj" />
   </ItemGroup>
 
 </Project>
