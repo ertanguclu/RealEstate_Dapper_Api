@@ -9,6 +9,7 @@ using RealEstate_Dapper_Api.Repositories.EstateAgentRepositories.DashboardReposi
 using RealEstate_Dapper_Api.Repositories.EstateAgentRepositories.DashboardRepositories.StatisticRepositories;
 using RealEstate_Dapper_Api.Repositories.MessageRepositories;
 using RealEstate_Dapper_Api.Repositories.PopularLocationRepositories;
+using RealEstate_Dapper_Api.Repositories.ProductImageRepositories;
 using RealEstate_Dapper_Api.Repositories.ProductRepository;
 using RealEstate_Dapper_Api.Repositories.ServiceRepository;
 using RealEstate_Dapper_Api.Repositories.StatisticsRepositories;
@@ -20,23 +21,24 @@ using RealEstate_Dapper_Api.Repositories.WhoWeAreRepository;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddTransient < Context>();
+builder.Services.AddTransient<Context>();
 
-builder.Services.AddTransient < ICategoryRepository,CategoryRepository>();
-builder.Services.AddTransient<IProductRepository,ProductRepository>();
-builder.Services.AddTransient<IWhoWeAreDetailRepository,WhoWeAreDetailRepository>();
-builder.Services.AddTransient<IServiceRepository,ServiceRepository>();
-builder.Services.AddTransient<IBottomGridRepository,BottomGridRepository>();
-builder.Services.AddTransient<IPopularLocationRepository,PopularLocationRepository>();
-builder.Services.AddTransient<IStatisticsRepository,StatisticsRepository>();
-builder.Services.AddTransient<ITestimonialRepository,TestimonialRepository>();
-builder.Services.AddTransient<IEmployeeRepository,EmployeeRepository>();
-builder.Services.AddTransient<IContactRepository,ContactRepository>();
-builder.Services.AddTransient<IToDoListRepository,ToDoListRepository>();
-builder.Services.AddTransient<IStatisticRepository,StatisticRepository>();
-builder.Services.AddTransient<IChartRepository,ChartRepository>();
-builder.Services.AddTransient<ILast5ProductsRepository,Last5ProductsRepository>();
-builder.Services.AddTransient<IMessageRepository,MessageRepository>();
+builder.Services.AddTransient<ICategoryRepository, CategoryRepository>();
+builder.Services.AddTransient<IProductRepository, ProductRepository>();
+builder.Services.AddTransient<IWhoWeAreDetailRepository, WhoWeAreDetailRepository>();
+builder.Services.AddTransient<IServiceRepository, ServiceRepository>();
+builder.Services.AddTransient<IBottomGridRepository, BottomGridRepository>();
+builder.Services.AddTransient<IPopularLocationRepository, PopularLocationRepository>();
+builder.Services.AddTransient<IStatisticsRepository, StatisticsRepository>();
+builder.Services.AddTransient<ITestimonialRepository, TestimonialRepository>();
+builder.Services.AddTransient<IEmployeeRepository, EmployeeRepository>();
+builder.Services.AddTransient<IContactRepository, ContactRepository>();
+builder.Services.AddTransient<IToDoListRepository, ToDoListRepository>();
+builder.Services.AddTransient<IStatisticRepository, StatisticRepository>();
+builder.Services.AddTransient<IChartRepository, ChartRepository>();
+builder.Services.AddTransient<ILast5ProductsRepository, Last5ProductsRepository>();
+builder.Services.AddTransient<IMessageRepository, MessageRepository>();
+builder.Services.AddTransient<IProductImageRepository, ProductImageRepository>();
 
 builder.Services.AddCors(opt =>
 {
