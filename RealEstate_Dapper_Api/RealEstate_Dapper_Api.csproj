@@ -18,4 +18,9 @@
     <ProjectReference Include="..\RealEstate_Dapper_UI\RealEstate_Dapper_UI.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Dtos\AmenityDtos\" />
+    <Folder Include="Dtos\PropertyAmenityDtos\" />
+  </ItemGroup>
+
 </Project>
