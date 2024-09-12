@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using RealEstate_Dapper_Api.Dtos.ServiceDtos;
 using RealEstate_Dapper_Api.Repositories.ServiceRepository;
 
@@ -16,16 +15,16 @@ namespace RealEstate_Dapper_Api.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetServiceList() 
+        public async Task<IActionResult> GetServiceList()
         {
-            var values = await _serviceRespository.GetAllServiceAsync();
+            var values = await _serviceRespository.GetAllService();
             return Ok(values);
         }
 
         [HttpPost]
         public async Task<IActionResult> CreateService(CreateServiceDto createServiceDto)
         {
-            _serviceRespository.CreateService(createServiceDto);
+            await _serviceRespository.CreateService(createServiceDto);
             return Ok("Hizmet Kısmı Başarılı Bir Şekilde Eklendi");
 
 
@@ -33,14 +32,14 @@ namespace RealEstate_Dapper_Api.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteService(int id)
         {
-            _serviceRespository.DeleteService(id);
+            await _serviceRespository.DeleteService(id);
             return Ok("Hizmet Kısmı Başarılı Bir Şekilde Silindi");
         }
 
         [HttpPut]
         public async Task<IActionResult> UpdateService(UpdateServiceDto updateServiceDto)
         {
-            _serviceRespository.UpdateService(updateServiceDto);
+            await _serviceRespository.UpdateService(updateServiceDto);
             return Ok("Hizmet Kısmı Başarıyla Güncellendi");
         }
 
