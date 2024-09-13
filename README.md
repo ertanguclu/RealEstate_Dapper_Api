@@ -25,7 +25,8 @@ Bu projede, emlakçıların sahip oldukları mülkleri satılık veya kiralık o
 - **Güvenlik ve Yetkilendirme**: Rol bazlı yetkilendirme ve JWT ile kullanıcıların yetkileri sınırlandırılmıştır. Emlakçılar yalnızca kendi mülklerinde işlem yapabilir, kullanıcılar ise kiralama veya satın alma işlemleri gerçekleştirebilir.
 
 ## Proje Görüntüleri
-![Alt metin](https://github.com/kullanici-adi/proje-adi/blob/main/images/your-gif.gif)
+![Alt metin](https://github.com/ertanguclu/RealEstate_Dapper_Api/blob/master/images.gif)
+
 
 
 
