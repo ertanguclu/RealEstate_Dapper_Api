@@ -44,8 +44,8 @@ namespace RealEstate_Dapper_UI.Controllers
             return View();
         }
 
-        [HttpGet]
-        public async Task<IActionResult> PropertySingle(int id)
+        [HttpGet("Property/{slug}/{id}")]
+        public async Task<IActionResult> PropertySingle(string slug, int id)
         {
             ViewBag.i = id;
             var client = _httpClientFactory.CreateClient();
@@ -67,6 +67,7 @@ namespace RealEstate_Dapper_UI.Controllers
             ViewBag.address = values.address;
             ViewBag.type = values.type;
             ViewBag.description = values.description;
+            ViewBag.slugUrl = values.SlugUrl;
 
             ViewBag.bathCount = values2.bathCount;
             ViewBag.bedCount = values2.bedRoomCount;
@@ -85,7 +86,20 @@ namespace RealEstate_Dapper_UI.Controllers
             int month = timeSpan.Days / 30;
 
             ViewBag.datediff = month;
+
+            string slugFromTitle = CreateSlug(values.title);
+            ViewBag.slugUrl = slugFromTitle;
+
             return View();
+        }
+        private string CreateSlug(string title)
+        {
+            title = title.ToLowerInvariant();
+            title = title.Replace(" ", "-");
+            title = System.Text.RegularExpressions.Regex.Replace(title, @"[^a-z0-9\s-]", "");
+            title = System.Text.RegularExpressions.Regex.Replace(title, @"\s+", " ").Trim();
+            title = System.Text.RegularExpressions.Regex.Replace(title, @"\s", "-");
+            return title;
         }
     }
 }
