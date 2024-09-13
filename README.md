@@ -24,4 +24,7 @@ Bu projede, emlakçıların sahip oldukları mülkleri satılık veya kiralık o
 - **Mülk Listeleme ve Filtreleme**: Kullanıcıların kriterlerine göre mülkleri arayıp görüntüleyebileceği bir algoritma geliştirilmiştir.
 - **Güvenlik ve Yetkilendirme**: Rol bazlı yetkilendirme ve JWT ile kullanıcıların yetkileri sınırlandırılmıştır. Emlakçılar yalnızca kendi mülklerinde işlem yapabilir, kullanıcılar ise kiralama veya satın alma işlemleri gerçekleştirebilir.
 
+![Proje Görüntüleri](https://github.com/kullanici-adi/proje-adi/blob/main/images/your-gif.gif)
+)
+
 
